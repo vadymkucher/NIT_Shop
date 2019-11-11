@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "scripts" : "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/vadymkucher/NIT_Shop/issues"
   },
-  "homepage": "https://github.com/vadymkucher/NIT_Shop#readme"
+  "homepage": "https://github.com/vadymkucher/NIT_Shop#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
 }
