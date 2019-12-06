@@ -1,12 +1,8 @@
-// console.log('Hello!');
-// console.log(`The time is ${new Date()}`);
-// import './scss/main.scss';
-
-
 
 var cart = {};
 var goods = {};
 var description = {};
+var curCategory;
 
 ready();
 
