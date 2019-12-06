@@ -91,7 +91,7 @@ function loadCategories() {
                             showPreview(id);
                         })
                     }
-                }, 100);
+                }, 10000);
             } catch (e) {
                 setTimeout(function () {
                     var info = document.getElementsByClassName("show-good-info");
@@ -104,7 +104,7 @@ function loadCategories() {
                             showPreview(id);
                         })
                     }
-                }, 300);
+                }, 10000);
             }
 
 
@@ -158,20 +158,33 @@ function loadGoodsFromCategory(id) {
             }
 
             price = price.replace(" грн", '');
-            console.log(image)
-            console.log(name)
-            console.log(price)
+
             createItem(image, name, price);
             update()
             var id = $(this).attr('data-id');
-            if (cart[id - 1] != undefined) {
-            } else {
-                cart[id - 1] = {};
-                cart[id - 1].name = name;
-                cart[id - 1].quantity = 1;
-                cart[id - 1].price = price;
+            try{
+                if (cart[id - 1] !== undefined) {
+                } else {
+                    cart[id - 1] = {};
+                    cart[id - 1].name = name;
+                    cart[id - 1].quantity = 1;
+                    cart[id - 1].price = price;
+                }
+                localStorage.setItem('cart', JSON.stringify(cart))
+            }catch(e){
+                cart = {};
+                localStorage.setItem('cart', JSON.stringify(cart))
+                update()
+                if (cart[id - 1] !== undefined) {
+                } else {
+                    cart[id - 1] = {};
+                    cart[id - 1].name = name;
+                    cart[id - 1].quantity = 1;
+                    cart[id - 1].price = price;
+                }
+                localStorage.setItem('cart', JSON.stringify(cart))
             }
-            localStorage.setItem('cart', JSON.stringify(cart))
+
         });
     });
 }
@@ -267,6 +280,9 @@ function showPreview(id) {
 }
 
 function ready() {
+    if(cart===null){
+        localStorage.setItem("cart","{}");
+    }
     if (cart.length === undefined) {
         cart = JSON.parse(localStorage.getItem('cart'))
     }
@@ -275,6 +291,7 @@ function ready() {
     } catch (e) {
         setTimeout(timer, 500);
     }
+
 }
 
 
