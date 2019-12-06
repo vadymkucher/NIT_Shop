@@ -2,10 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" type="text/css" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
+<header class = "header">
+    <div class = "container">
+        <div class = "header__inner">
+            <div class = "logo">Table tennis shop</div>
+            <nav class = "navigation">
+                <a class ="navigation_link" href="http://setka-cup.com/participants/437" target="_blank">about author</a>
+                <a class ="navigation_link" href="https://www.instagram.com/v.kucher13/" target="_blank">instagram</a>
+                <a class ="navigation_link" href="http://www.uttf.com.ua/ru/" target="_blank" > fntu</a>
+                <button id="myBtn">Open Modal</button>
+            </nav>
+        </div>
+    </div>
+</header>
+<div id="preview-frame">
+
+</div>
+<div class="main-content">
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger"><div></div></div>
+        <section id="categories">
+            <div id="categories-list">
+                <ul></ul>
+            </div>
+        </section>
+    </div>
+
+    <section id="goods-content">
+        <div id="goods-container">
+        </div>
+    </section>
+
+</div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Cart</h2>
+        </div>
+        <div class="modal-body">
+            <div class="layout-inline row th">
+                <div class="col col-pro">Product</div>
+                <div class="col col-price align-center">
+                    Price
+                </div>
+                <div class="col col-qty align-center">QTY</div>
+            </div>
+            <div class="test">
+            </div>
+            <div class="orderMenu">
+            </div>
+            <div class="tf">
+                <p id="total">Total</p>
+            </div>
+            <a href="#" class="purchaseBut">Purchase</a>
+            <a href="#" class="cancelBut">Back</a>
+            <a href="#" class="submitBut">Submit</a>
+            <div class="modal-footer">
+                <h3>Phone us: +380999999999</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    This page is made by Vadym Kucheriavyi
+</footer>
+<script src = "./js/main.js" defer ></script>
 </body>
-<script src="./js/main.js"></script>
 </html>
+
